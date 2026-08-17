@@ -20,6 +20,7 @@ class TagManager
     }
     public List<Tag> GetAll()
     {
-        return tags;
+        // we return a copy of the tags list instead of returning the tags list itself to avoid potential issues. 
+        return new List<Tag>(tags);
     }
 }
