@@ -8,4 +8,14 @@ class TagManager
         Tag tag = new Tag(name);
         tags.Add(tag);
     }
+    public void AddMany(string input)
+    {
+        string[] tagsArray = input.Split(",");
+
+        foreach (string tagInput in tagsArray)
+        {
+            Add(tagInput);
+        }
+
+    }
 }

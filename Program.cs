@@ -34,21 +34,21 @@ class Program
             {
                 Console.WriteLine("Enter a tag, or tags separated by comma");
                 string userInputTags = Console.ReadLine(); // f.eks "Coffee" eller "tea, coffe, milk"
-                tagsList = tagService.ParseTags(userInputTags);    
+                tagManager.AddMany(userInputTags);
             }
             else if (choice == 2)
             {
-                TagPrinter.Print(tagsList);
+                // TagPrinter.Print(tagsList);
             }
             else if (choice == 3)
             {
                 Console.WriteLine("saving to file...");
-                tagRepository.Save(tagsList);
+                // tagRepository.Save(tagsList);
             }
             else if (choice == 4)
             {
                 Console.WriteLine("loading from file...");
-                tagsList = tagRepository.Load();
+                // tagsList = tagRepository.Load();
             }
             else if (choice == 5)
             {
