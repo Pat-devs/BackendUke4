@@ -15,15 +15,14 @@
 ### TagPrinter
  - Prints tags to the user
 
-### TagService
- - a class that does business logic
+### TagManager
+ - a class that deals with business logic regarding state and behavior of the tagslist
 
 ### TagRepository
  - a class that saves and loads data
 
 ### Program
  - The entry point. It starts the program and connects the difference pieces together. 
-   - Currently it also handles state of the tagslist (todofix)
 
 
 #### Notes on class modelling
