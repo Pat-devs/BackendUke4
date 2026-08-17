@@ -11,20 +11,6 @@ class Program
         // create an instance of the TagManager
         TagManager tagManager = new TagManager();
 
-
-
-        tagManager.AddMany("test,some,tags");
-
-        var temporaryList = tagManager.GetAll(); 
-
-        temporaryList.Clear(); // clear the local copy....
-        // actually it clears the original list
-
-        TagPrinter.Print(tagManager.GetAll());
-
-        Console.ReadLine();
-
-
         // Tag printer UI:
         Console.Clear();
         bool running = true;
