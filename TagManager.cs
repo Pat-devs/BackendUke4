@@ -18,4 +18,8 @@ class TagManager
         }
 
     }
+    public List<Tag> GetAll()
+    {
+        return tags;
+    }
 }

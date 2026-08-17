@@ -38,7 +38,7 @@ class Program
             }
             else if (choice == 2)
             {
-                // TagPrinter.Print(tagsList);
+                TagPrinter.Print(tagManager.GetAll());
             }
             else if (choice == 3)
             {
