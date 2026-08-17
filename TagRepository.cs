@@ -2,23 +2,23 @@ class TagRepository
 {
     private string fileName = "tags.txt"; 
 
-    public void Save(List<TagModel> tagsList)
+    public void Save(List<Tag> tagsList)
     {
         
         // before writning to the file we need convert the list of objects to a list of strings
 
         List<string> lines = new List<string>();
 
-        foreach (TagModel tag in tagsList)
+        foreach (Tag tag in tagsList)
         {
             lines.Add(tag.Name);
         }
 
         File.WriteAllLines(fileName, lines);
     }
-    public List<TagModel> Load()
+    public List<Tag> Load()
     {
-        List<TagModel> tagsList = new List<TagModel>();
+        List<Tag> tagsList = new List<Tag>();
 
         if (File.Exists(fileName))
         {
@@ -29,7 +29,7 @@ class TagRepository
 
             foreach (string line in lines)
             {
-                TagModel tag = new TagModel(line);
+                Tag tag = new Tag(line);
                 tagsList.Add(tag);
             }
         }

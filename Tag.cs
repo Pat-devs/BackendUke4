@@ -1,7 +1,7 @@
-class TagModel
+class Tag
 {
     public string Name { get; set; }
-    public TagModel(string name)
+    public Tag(string name)
     {
         Name = name;
     }

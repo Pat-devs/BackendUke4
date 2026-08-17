@@ -9,7 +9,7 @@ class Program
         // create an instance of the TagRepository
         TagRepository tagRepository = new TagRepository();
 
-        List<TagModel> tagsList = new List<TagModel>(); // tags list
+        List<Tag> tagsList = new List<Tag>(); // tags list
 
 
         // Tag printer UI:
