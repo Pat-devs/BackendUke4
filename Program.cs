@@ -45,7 +45,9 @@ class Program
             else if (choice == 4)
             {
                 Console.WriteLine("loading from file...");
-                // tagsList = tagRepository.Load();
+                
+                List<Tag> loadedTags = tagRepository.Load();
+                tagManager.ReplaceAll(loadedTags);
             }
             else if (choice == 5)
             {

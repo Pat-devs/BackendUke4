@@ -1,7 +1,7 @@
 class TagManager
 {
     // State: tags
-    // Behavior: Add()
+    // Behavior: Add(), GetAllTags(), ReplaceAll()
     private List<Tag> tags = new List<Tag>();
     private bool Contains(string name)
     {
@@ -33,5 +33,13 @@ class TagManager
     {
         // we return a copy of the tags list instead of returning the tags list itself to avoid potential issues. 
         return new List<Tag>(tags);
+    }
+    public void ReplaceAll(List<Tag> loadedTags)
+    {
+        tags.Clear();
+        foreach (Tag tag in loadedTags)
+        {
+            Add(tag.Name);
+        }
     }
 }
