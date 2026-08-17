@@ -46,3 +46,8 @@ ShoppingCart class:
 TagManager class:
  - State: tags
  - Behavior: AddTags, RemoveTags, GetTags, and so on (replace tags?)
+
+
+#### Notes on encapsulation
+Encapsulation helps us "protect" the state of objects.
+Such that they have a controlled way to change.
