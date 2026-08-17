@@ -8,8 +8,8 @@ class Program
         TagService tagService = new TagService();
         // create an instance of the TagRepository
         TagRepository tagRepository = new TagRepository();
-
-        List<Tag> tagsList = new List<Tag>(); // tags list
+        // create an instance of the TagManager
+        TagManager tagManager = new TagManager();
 
 
         // Tag printer UI:
