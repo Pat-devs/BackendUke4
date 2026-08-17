@@ -3,8 +3,19 @@ class TagManager
     // State: tags
     // Behavior: Add()
     private List<Tag> tags = new List<Tag>();
+    private bool Contains(string name)
+    {
+        foreach (Tag tag in tags)
+        {
+            if (tag.Name == name) return true;
+        }
+
+        return false;
+    }
     public void Add(string name)
     {
+        if (Contains(name)) return;
+
         Tag tag = new Tag(name);
         tags.Add(tag);
     }

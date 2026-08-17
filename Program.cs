@@ -4,8 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // create instance of the TagService
-        TagService tagService = new TagService();
         // create an instance of the TagRepository
         TagRepository tagRepository = new TagRepository();
         // create an instance of the TagManager
