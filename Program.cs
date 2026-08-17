@@ -40,7 +40,7 @@ class Program
             else if (choice == 3)
             {
                 Console.WriteLine("saving to file...");
-                // tagRepository.Save(tagsList);
+                tagRepository.Save(tagManager.GetAll());
             }
             else if (choice == 4)
             {
