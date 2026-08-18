@@ -14,9 +14,11 @@ class TagManager
     }
     public void Add(string name)
     {
-        if (Contains(name)) return;
+        string cleanedName = name.Trim();
+        if (cleanedName == "") return;
+        if (Contains(cleanedName)) return;
 
-        Tag tag = new Tag(name);
+        Tag tag = new Tag(cleanedName);
         tags.Add(tag);
     }
     public void AddMany(string input)

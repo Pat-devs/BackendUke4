@@ -17,6 +17,7 @@
 
 ### TagManager
  - a class that deals with business logic regarding state and behavior of the tagslist
+ - TODO: filtering
 
 ### TagRepository
  - a class that saves and loads data
