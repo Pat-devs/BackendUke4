@@ -9,16 +9,16 @@ class Program
     static void Main(string[] args)
     {
 
-        Tag coffeeTag = new Tag("coffee");
+        //Tag coffeeTag = new Tag("coffee");
 
         // var condtion = IsLongTag;
 
-        Func<Tag, bool> condition = IsLongTag; // a Func is basically a delegate
+        //Func<Tag, bool> condition = IsLongTag; // a Func is basically a delegate
 
-        Console.WriteLine(condition(coffeeTag));
+        //Console.WriteLine(condition(coffeeTag));
 
 
-        Console.ReadLine();
+        //Console.ReadLine();
 
 
         // create an instance of the TagRepository
@@ -38,6 +38,8 @@ class Program
             Console.WriteLine("3. Save tags to file");
             Console.WriteLine("4. Load tags from file");
             Console.WriteLine("5. Exit");
+            Console.WriteLine("6. List tags longer than 5 chars");
+            Console.WriteLine("7. List tags that begin with c");
             Console.WriteLine();
             Console.Write("Choose an option: ");
 
@@ -70,6 +72,16 @@ class Program
             {
                 running = false;
                 Console.WriteLine("Byebye.");
+            }
+            else if (choice == 6)
+            {
+                // TagPrinter.Print(tagManager.GetLongTags()); 
+                var filteredTags = tagManager.Filter(IsLongTag);
+                TagPrinter.Print(filteredTags);
+            }
+            else if (choice == 7)
+            {
+                TagPrinter.Print(tagManager.GetTagsStartingWithC());
             }
         }
     }
