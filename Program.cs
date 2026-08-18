@@ -41,9 +41,9 @@ class Program
             Console.WriteLine("2. Show current tags");
             Console.WriteLine("3. Save tags to file");
             Console.WriteLine("4. Load tags from file");
-            Console.WriteLine("5. Exit");
-            Console.WriteLine("6. List tags longer than 5 chars");
-            Console.WriteLine("7. List tags that begin with c");
+            Console.WriteLine("5. List tags longer than 5 chars");
+            Console.WriteLine("6. Search tags");
+            Console.WriteLine("7. Exit");
             Console.WriteLine();
             Console.Write("Choose an option: ");
 
@@ -74,28 +74,23 @@ class Program
             }
             else if (choice == 5)
             {
-                running = false;
-                Console.WriteLine("Byebye.");
+                List<Tag> filteredTags = tagManager.Filter(tag => tag.Name.Length > 5); 
+                TagPrinter.Print(filteredTags);
             }
-            else if (choice == 6)
+            else if (choice == 6) // search
             {
-                // TagPrinter.Print(tagManager.GetLongTags()); 
+                Console.Write("Enter search text: ");
 
+                string searchText = Console.ReadLine();
 
-                // List<Tag> filteredTags = tagManager.Filter(IsLongTag); // provide a named method as argument
-
-                List<Tag> filteredTags = tagManager.Filter(
-                    tag => tag.Name.Length > 5 // provide an anonymous function (if a lambda has only one line we can skip the {} and return keyword, return is implied)
-                ); 
-                
+                List<Tag> filteredTags = tagManager.Filter(tag => tag.Name.Contains(searchText)); // case sensitive
                 
                 TagPrinter.Print(filteredTags);
             }
             else if (choice == 7)
             {
-                // TagPrinter.Print(tagManager.GetTagsStartingWithC());
-                List<Tag> filteredTags = tagManager.Filter(StartsWithC);
-                TagPrinter.Print(filteredTags);
+                running = false;
+                Console.WriteLine("Byebye.");
             }
         }
     }
