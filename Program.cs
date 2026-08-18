@@ -9,11 +9,13 @@ class Program
     static void Main(string[] args)
     {
 
-        Tag coffeeTag = new Tag("milk");
+        Tag coffeeTag = new Tag("coffee");
 
-        
+        // var condtion = IsLongTag;
 
-        Console.WriteLine(IsLongTag(coffeeTag));
+        Func<Tag, bool> condition = IsLongTag; // a Func is basically a delegate
+
+        Console.WriteLine(condition(coffeeTag));
 
 
         Console.ReadLine();
