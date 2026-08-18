@@ -85,7 +85,7 @@ class Program
                 // List<Tag> filteredTags = tagManager.Filter(IsLongTag); // provide a named method as argument
 
                 List<Tag> filteredTags = tagManager.Filter(
-                    (Tag tag) => { return tag.Name.Length > 5; } // provide an anonymous function (a lamba)
+                    tag => { return tag.Name.Length > 5; } // provide an anonymous function (a lamba)
                 ); 
                 
                 
