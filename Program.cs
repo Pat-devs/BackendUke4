@@ -85,11 +85,7 @@ class Program
                 // List<Tag> filteredTags = tagManager.Filter(IsLongTag); // provide a named method as argument
 
                 List<Tag> filteredTags = tagManager.Filter(
-                    tag => { 
-                        Console.WriteLine("Hi, im doing some important work ;)");
-                        Console.WriteLine("...................................");
-                        return tag.Name.Length > 5; 
-                    } // provide an anonymous function (a lamba)
+                    tag => tag.Name.Length > 5 // provide an anonymous function (if a lambda has only one line we can skip the {} and return keyword, return is implied)
                 ); 
                 
                 
