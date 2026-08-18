@@ -2,8 +2,23 @@
 
 class Program
 {
+    static bool IsLongTag(Tag tag)
+    {
+        return tag.Name.Length > 5; // coffee = 6
+    }
     static void Main(string[] args)
     {
+
+        Tag coffeeTag = new Tag("milk");
+
+        
+
+        Console.WriteLine(IsLongTag(coffeeTag));
+
+
+        Console.ReadLine();
+
+
         // create an instance of the TagRepository
         TagRepository tagRepository = new TagRepository();
         // create an instance of the TagManager
