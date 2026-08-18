@@ -6,6 +6,10 @@ class Program
     {
         return tag.Name.Length > 5; // coffee = 6
     }
+    static bool StartsWithC(Tag tag)
+    {
+        return tag.Name.StartsWith("c");
+    }
     static void Main(string[] args)
     {
 
@@ -76,12 +80,22 @@ class Program
             else if (choice == 6)
             {
                 // TagPrinter.Print(tagManager.GetLongTags()); 
-                var filteredTags = tagManager.Filter(IsLongTag);
+
+
+                // List<Tag> filteredTags = tagManager.Filter(IsLongTag); // provide a named method as argument
+
+                List<Tag> filteredTags = tagManager.Filter(
+                    (Tag tag) => { return tag.Name.Length > 5; } // provide an anonymous function (a lamba)
+                ); 
+                
+                
                 TagPrinter.Print(filteredTags);
             }
             else if (choice == 7)
             {
-                TagPrinter.Print(tagManager.GetTagsStartingWithC());
+                // TagPrinter.Print(tagManager.GetTagsStartingWithC());
+                List<Tag> filteredTags = tagManager.Filter(StartsWithC);
+                TagPrinter.Print(filteredTags);
             }
         }
     }
