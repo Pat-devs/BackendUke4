@@ -7,6 +7,10 @@ class TagManager
     {
         return tags.Any(tag => tag.Name == name);
     }
+    public List<Tag> GetSortedByName()
+    {
+        return tags.OrderBy(tag => tag.Name).ToList();
+    }
     public void Add(string name)
     {
         string cleanedName = name.Trim();

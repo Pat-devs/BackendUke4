@@ -23,7 +23,8 @@ class Program
             Console.WriteLine("5. List tags longer than 5 chars");
             Console.WriteLine("6. Search tags");
             Console.WriteLine("7. Show statistics");
-            Console.WriteLine("8. Exit");
+            Console.WriteLine("8. Show tags in alphabetical order");
+            Console.WriteLine("9. Exit");
             Console.WriteLine();
             Console.Write("Choose an option: ");
 
@@ -87,6 +88,11 @@ class Program
 
             }
             else if (choice == 8)
+            {
+                // call a sorting method from tag manager :)
+                TagPrinter.Print(tagManager.GetSortedByName());
+            }
+            else if (choice == 9)
             {
                 running = false;
                 Console.WriteLine("Byebye.");
