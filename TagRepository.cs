@@ -10,21 +10,10 @@ class TagRepository
     }
     public List<Tag> Load()
     {
-
         if (!File.Exists(fileName)) return new List<Tag>(); // early return pattern allows us to terminate remainder of the methods code if the file does not exist.
 
         string[] savedTags = File.ReadAllLines(fileName);
-
         List<Tag> tagsList = savedTags.Select(line => new Tag(line)).ToList(); // Select transforms the array of strings into a list of Tag-objects
-
-        //List<string> lines = new List<string>();
-        //lines = new List<string>(savedTags);
-
-        //foreach (string line in lines)
-        //{
-        //    Tag tag = new Tag(line);
-        //    tagsList.Add(tag);
-        //}
 
         return tagsList;
     }
