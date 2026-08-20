@@ -58,13 +58,7 @@ class Program
             }
             else if (choice == 2)
             {
-                //TagPrinter.Print(tagManager.GetAll());
-
-                List<Tag> tags = tagManager.GetAll();
-
-                tags.Select(tag => tag.Name).ToList();
-
-                TagPrinter.Print(tags);
+                TagPrinter.Print(tagManager.GetAll());
             }
             else if (choice == 3)
             {
