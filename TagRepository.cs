@@ -5,15 +5,8 @@ class TagRepository
     public void Save(List<Tag> tagsList)
     {
         
-        // before writning to the file we need convert the list of objects to a list of strings
-
-        List<string> lines = new List<string>();
-
-        foreach (Tag tag in tagsList)
-        {
-            lines.Add(tag.Name);
-        }
-
+        // before writning to the file we need convert the list of objects to a list of strings (Select)
+        List<string> lines = tagsList.Select(tag => tag.Name).ToList();
         File.WriteAllLines(fileName, lines);
     }
     public List<Tag> Load()
