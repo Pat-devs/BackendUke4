@@ -2,29 +2,8 @@
 
 class Program
 {
-    static bool IsLongTag(Tag tag)
-    {
-        return tag.Name.Length > 5; // coffee = 6
-    }
-    static bool StartsWithC(Tag tag)
-    {
-        return tag.Name.StartsWith("c");
-    }
     static void Main(string[] args)
     {
-
-        //Tag coffeeTag = new Tag("coffee");
-
-        // var condtion = IsLongTag;
-
-        //Func<Tag, bool> condition = IsLongTag; // a Func is basically a delegate
-
-        //Console.WriteLine(condition(coffeeTag));
-
-
-        //Console.ReadLine();
-
-
         // create an instance of the TagRepository
         TagRepository tagRepository = new TagRepository();
         // create an instance of the TagManager
