@@ -46,16 +46,20 @@ class TagManager
     }
     public List<Tag> Filter(Func<Tag, bool> condition)
     {
-        List<Tag> result = new List<Tag>();
+        return tags.Where(condition).ToList();
 
-        foreach (Tag tag in tags)
-        {
-            if (condition(tag))
-            {
-                result.Add(tag);
-            }
-        }
 
-        return result;
+        //List<Tag> result = new List<Tag>();
+
+
+        //foreach (Tag tag in tags)
+        //{
+        //    if (condition(tag))
+        //    {
+        //        result.Add(tag);
+        //    }
+        //}
+
+        //return result;
     }
 }

@@ -58,7 +58,13 @@ class Program
             }
             else if (choice == 2)
             {
-                TagPrinter.Print(tagManager.GetAll());
+                //TagPrinter.Print(tagManager.GetAll());
+
+                List<Tag> tags = tagManager.GetAll();
+
+                tags.Select(tag => tag.Name).ToList();
+
+                TagPrinter.Print(tags);
             }
             else if (choice == 3)
             {
@@ -76,6 +82,12 @@ class Program
             {
                 List<Tag> filteredTags = tagManager.Filter(tag => tag.Name.Length > 5); 
                 TagPrinter.Print(filteredTags);
+
+                //List<Tag> tags = tagManager.GetAll();
+
+                //List<Tag> longTags = tags.Where(tag => tag.Name.StartsWith("W")).ToList();
+
+                //TagPrinter.Print(longTags);
             }
             else if (choice == 6) // search
             {
