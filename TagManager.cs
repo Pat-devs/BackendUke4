@@ -5,12 +5,14 @@ class TagManager
     private List<Tag> tags = new List<Tag>();
     private bool Contains(string name)
     {
-        foreach (Tag tag in tags)
-        {
-            if (tag.Name == name) return true;
-        }
+        return tags.Any(tag => tag.Name == name);
 
-        return false;
+        //foreach (Tag tag in tags)
+        //{
+        //    if (tag.Name == name) return true;
+        //}
+
+        //return false;
     }
     public void Add(string name)
     {
