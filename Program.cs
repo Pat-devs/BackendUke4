@@ -22,7 +22,8 @@ class Program
             Console.WriteLine("4. Load tags from file");
             Console.WriteLine("5. List tags longer than 5 chars");
             Console.WriteLine("6. Search tags");
-            Console.WriteLine("7. Exit");
+            Console.WriteLine("7. Show statistics");
+            Console.WriteLine("8. Exit");
             Console.WriteLine();
             Console.Write("Choose an option: ");
 
@@ -73,6 +74,19 @@ class Program
                 TagPrinter.Print(filteredTags);
             }
             else if (choice == 7)
+            {
+                List<Tag> tags = tagManager.GetAll();
+
+                Console.WriteLine("Total tags: " + tags.Count);
+
+                int longTagCount = tags.Count(tag => tag.Name.Length > 5);
+                Console.WriteLine("Long tags: " + longTagCount);
+
+                bool hasCode = tags.Any(tag => tag.Name == "code");
+                Console.WriteLine("Tags containing code? " + hasCode);
+
+            }
+            else if (choice == 8)
             {
                 running = false;
                 Console.WriteLine("Byebye.");
