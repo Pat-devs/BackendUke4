@@ -51,3 +51,24 @@ TagManager class:
 #### Notes on encapsulation
 Encapsulation helps us "protect" the state of objects.
 Such that they have a controlled way to change.
+
+
+#### Notes on LINQ
+Langunage Integrated Query, examples of LINQ methods:
+ - Where : filter
+ - Select : transform 
+ - Any : check if somethign exist 
+ - Count : count number of matching items
+ - OrderBy : sort
+
+Example of Where (filter):
+
+Today we have.           : Filter(tag => condition)
+With LINQ we can just say: Where(tag => condition)
+
+More advanced examples (linq method chaining):
+
+tags
+    .Where(tag => tag.Name.Length > 3)
+    .OrderBy(tag => tag.Name)
+    .ToList();

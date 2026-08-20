@@ -44,35 +44,6 @@ class TagManager
             Add(tag.Name);
         }
     }
-    public List<Tag> GetLongTags()
-    {
-        List<Tag> result = new List<Tag>();
-
-        foreach (Tag tag in tags)
-        {
-            if (tag.Name.Length > 5)
-            {
-                result.Add(tag);
-            }
-        }
-
-        return result;
-    }
-
-    public List<Tag> GetTagsStartingWithC()
-    {
-        List<Tag> result = new List<Tag>();
-
-        foreach (Tag tag in tags)
-        {
-            if (tag.Name.StartsWith("c"))
-            {
-                result.Add(tag);
-            }
-        }
-
-        return result;
-    }
     public List<Tag> Filter(Func<Tag, bool> condition)
     {
         List<Tag> result = new List<Tag>();
