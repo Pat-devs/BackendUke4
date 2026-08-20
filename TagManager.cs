@@ -6,13 +6,6 @@ class TagManager
     private bool Contains(string name)
     {
         return tags.Any(tag => tag.Name == name);
-
-        //foreach (Tag tag in tags)
-        //{
-        //    if (tag.Name == name) return true;
-        //}
-
-        //return false;
     }
     public void Add(string name)
     {
@@ -49,19 +42,5 @@ class TagManager
     public List<Tag> Filter(Func<Tag, bool> condition)
     {
         return tags.Where(condition).ToList();
-
-
-        //List<Tag> result = new List<Tag>();
-
-
-        //foreach (Tag tag in tags)
-        //{
-        //    if (condition(tag))
-        //    {
-        //        result.Add(tag);
-        //    }
-        //}
-
-        //return result;
     }
 }
